@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 
 import { ClerkProvider } from '@clerk/nextjs'
+import Navbar from '@/components/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,11 +23,19 @@ export default function RootLayout({
       <ClerkProvider>
 
         <body className={inter.className}>
-          {children}
+          <div className='mx-36 text-3xl'>
+
+            <Navbar />
+
+            <div className='flex flex-col items-center mt-10 min-h-screen bg-gray-900'>
+              {children}
+            </div>
+
+          </div>
         </body>
 
       </ClerkProvider>
-      
+
     </html>
   )
 }

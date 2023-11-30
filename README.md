@@ -5,7 +5,17 @@ https://www.youtube.com/watch?v=-NSRgDuAtrc
 ## clerk auth
 https://clerk.com/
 
+- creer un compte
+- copier les codes dans .env.local
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
 
+- aller dans le quickstart et suivre le doc
+
+```bash
+npm install @clerk/nextjs
+
+```	
 
 
 

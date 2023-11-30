@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 
 import { ClerkLoaded, ClerkLoading, ClerkProvider } from '@clerk/nextjs'
+import { dark } from '@clerk/themes'
+
 import Navbar from '@/components/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -20,10 +22,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       
-      <ClerkProvider>
+      <ClerkProvider
+        appearance={{
+          baseTheme: dark
+        }}
+      >
 
         <body className={inter.className}>
-          <div className='mx-36 text-3xl'>
+          <div className='text-3xl'>
             
             <ClerkLoading>
               <div className='flex flex-col items-center min-h-screen'>
@@ -33,7 +39,7 @@ export default function RootLayout({
 
             <ClerkLoaded>
               <Navbar />
-              <div className='flex flex-col items-center mt-10 min-h-screen bg-gray-900'>
+              <div className='flex flex-col items-center mt-10 min-h-screen '>
                 {children}
               </div>
             </ClerkLoaded>
